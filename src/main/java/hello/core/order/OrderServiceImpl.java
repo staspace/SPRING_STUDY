@@ -47,7 +47,20 @@ public class OrderServiceImpl implements OrderService{
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
-    //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+
+
+//    private MemberRepository memberRepository;
+//    private DiscountPolicy discountPolicy;
+
+    //일반 메서드 주입(거의 사용하지 않는다.)
+    //OrderServiceImpl가 스프링 컨테이너가 관리하는 스프링 빈이어서 의존관계 자동주입이 가능한 것이다.
+//    @Autowired
+//    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy){
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
+
+
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
